@@ -49,6 +49,6 @@ See the {ref}`howto` for instructions on installing and setting up the individua
 
 ## Rust -- Advanced
 
-- {ref}`Rust Workshop SDKs <rust-workshop-sdks>`
+- {ref}`Rust Workshop SDK <rust-workshop-sdk>`
 
 See the {ref}`howto` for instructions on installing and setting up the individual toolchains.

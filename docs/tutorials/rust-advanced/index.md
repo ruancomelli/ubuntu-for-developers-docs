@@ -12,5 +12,5 @@ These tutorials cover advanced Rust development topics on Ubuntu, beyond the bas
 :::{toctree}
 :maxdepth: 1
 
-Rust Workshop SDKs <rust-workshop-sdks>
+Rust Workshop SDK <rust-workshop-sdk>
 :::
