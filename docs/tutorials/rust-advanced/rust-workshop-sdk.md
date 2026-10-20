@@ -7,7 +7,7 @@ myst:
 (rust-workshop-sdk)=
 # Develop with the Rust Workshop SDK on Ubuntu
 
-This tutorial provides basic guidance on using the Rust Workshop SDK for development environments on Ubuntu with the [Workshop](https://ubuntu.com/workshop) tool. It shows how to create a "Hello, world!" program, explains how the SDK manages Rust toolchains for your project, and goes in-depth with an example that builds a web service and exposes it to your host machine.
+This tutorial provides guidance on using the Rust Workshop SDK for development environments on Ubuntu with the [Workshop](https://ubuntu.com/workshop) tool. It explains how the SDK manages Rust toolchains for your project and shows how to create a "Hello, world!" program, then goes in-depth with an example that builds a web service and exposes it to your host machine.
 
 For instructions on how to install Workshop and related tooling, see the dedicated guide on how to [Get started with workshops](https://ubuntu.com/workshop/docs/). There is no need to install Rust or related tooling directly, as they are installed through the SDK.
 
