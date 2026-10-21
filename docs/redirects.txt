@@ -1,3 +1,2 @@
 tutorials/graalvm-use tutorials/java-advanced/graalvm-use
 tutorials/crac-use tutorials/java-advanced/crac-use
-tutorials/rust-advanced/rust-workshop-sdks tutorials/rust-advanced/rust-workshop-sdk
