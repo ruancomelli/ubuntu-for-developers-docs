@@ -37,7 +37,7 @@ Dependency caches are stored on the host and survive workshop refreshes, while i
 
 ## Getting started with the Rust Workshop SDK
 
-To get started using the SDK, [install Workshop and its prerequisites](https://ubuntu.com/workshop/docs/tutorial/part-1-get-started/) to make sure it runs:
+Before using the SDK, install Workshop and its prerequisite, LXD. For more details, see the [Workshop getting-started tutorial](https://ubuntu.com/workshop/docs/tutorial/part-1-get-started/).
 
 ```{terminal}
 :copy:
