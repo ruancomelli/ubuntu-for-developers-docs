@@ -29,8 +29,8 @@ Where other ecosystems provide separate SDKs for each build tool, the Rust SDK b
 The SDK itself does not pin a compiler version. Instead, it defers to rustup, which selects a toolchain using the following precedence:
 
 1. A {file}`rust-toolchain.toml` or {file}`rust-toolchain` file in your project directory, if present. See [the rustup documentation](https://rust-lang.github.io/rustup/overrides.html#the-toolchain-file) for details.
-1. Otherwise, your personal `rustup default` selection.
-1. Otherwise, the `stable` toolchain.
+1. Your personal `rustup default` selection.
+1. The `stable` toolchain.
 
 Dependency caches are stored on the host and survive workshop refreshes, while installed toolchains live inside the workshop container. See the {ref}`SDK reference <rust-sdk-reference>` section at the end of this tutorial for the details.
 
