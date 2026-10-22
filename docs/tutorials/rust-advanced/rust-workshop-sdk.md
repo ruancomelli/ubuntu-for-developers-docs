@@ -517,7 +517,7 @@ So far, everything has run inside the workshop. In this section, you will build 
       start: cargo run "$@"
     ```
 
-    The plug and slot pair defined above are the interfaces that specify how to communicate and share resources, allowing the workshop to operate in its own isolated environment, while still enabling controlled interactions between the SDKs and the host.
+    Because the workshop runs in an isolated container, a service listening inside it is not reachable from your host by default. Workshop connects the two sides through interfaces: a slot offers a resource, and a plug consumes it. The tunnel interface forwards network traffic from one endpoint to another.
 
     In our example, we first define a slot for the {pkg}`rust` SDK, which provides the capability to expose a desired network endpoint through the tunnel interface. We then define a tunnel plug that consumes the capability provided by the Rust slot. Since the plug is defined for the `system` SDK, this routes the application endpoint to the host endpoint and allows us to access the application from the host.
 
