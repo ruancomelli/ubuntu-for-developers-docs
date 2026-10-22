@@ -368,7 +368,7 @@ Refreshing the workshop re-runs the SDK setup, which resets the default toolchai
 
 ## A daily workflow with actions
 
-Typing the full {command}`workshop exec` incantation for every build soon gets tedious. [Workshop *actions*](https://ubuntu.com/workshop/docs/how-to/customize-workshops/add-actions/) let you name the commands you run often and invoke them as targets of {command}`workshop run`: {command}`workshop run build` runs the `build` action. To list the actions of a workshop, use {command}`workshop actions`.
+Typing the full {command}`workshop exec` incantation for every build soon gets tedious. [Workshop actions](https://ubuntu.com/workshop/docs/how-to/customize-workshops/add-actions/) let you name the commands you run often and invoke them as targets of {command}`workshop run`: {command}`workshop run build` runs the `build` action. To list the actions of a workshop, use {command}`workshop actions`.
 
 Add an `actions` section to the workshop definition:
 
