@@ -427,7 +427,7 @@ So far, everything has run inside the workshop. In this section, you will build 
 ### Prerequisites
 :::
 
-- [Install Workshop and its prerequisites](https://ubuntu.com/workshop/docs/tutorial/part-1-get-started/)
+- Workshop and LXD, installed as described in the [Workshop getting-started tutorial](https://ubuntu.com/workshop/docs/tutorial/part-1-get-started/)
 - The {file}`hello-workshop` project directory from the previous sections
 
 
