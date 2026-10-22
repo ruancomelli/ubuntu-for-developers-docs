@@ -310,7 +310,7 @@ info: default toolchain set to nightly-x86_64-unknown-linux-gnu
   nightly-x86_64-unknown-linux-gnu unchanged - rustc 1.101.0-nightly (1a2c4797e 2026-10-21)
 ```
 
-Your selection is stored inside the workshop container, so it survives stopping and starting the workshop:
+Your selection is stored inside the workshop container, so it survives restarts. To confirm this, stop and start the workshop, then check the toolchain again:
 
 ```{terminal}
 :copy:
