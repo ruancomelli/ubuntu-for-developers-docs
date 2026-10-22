@@ -201,7 +201,7 @@ Let's create a "Hello, world!" program and build it with tools from the {pkg}`ru
               workshop-target:  /home/workshop/.cargo/registry
       ```
 
-       The `rust` SDK installs rustup and the default `stable` toolchain inside the workshop, alongside a mount that caches downloaded dependencies on the host between workshop updates.
+       The `rust` SDK installs rustup and the default `stable` toolchain inside the workshop, alongside a mount that caches downloaded dependencies on the host between workshop updates. For more information about `workshop info`, refer to [its documentation page](https://ubuntu.com/workshop/docs/reference/cli/workshop/#ref-workshop-info).
 
     :::{note}
     To stop the workshop environment from running, use {command}`workshop stop`. To then make the workshop ready for use again, start it with the {command}`workshop start` command.
