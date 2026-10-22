@@ -285,7 +285,7 @@ rustc 1.85.0 (4d91de4e4 2025-02-17)
 ```
 
 :::{note}
-The toolchain file takes precedence over your personal rustup settings. Even if you have selected a different default toolchain, commands run in the project directory use the version pinned in {file}`rust-toolchain.toml`. This makes the file ideal for teams: commit it to your repository and every contributor's workshop uses the same compiler.
+The toolchain file takes precedence over your personal rustup settings. Even if you have selected a different default toolchain, commands run in the project directory use the version pinned in {file}`rust-toolchain.toml`. Commit the file to your repository so that every contributor builds the project with the same Rust version.
 :::
 
 If you no longer need the pinned version, remove the file to fall back to the default toolchain.
