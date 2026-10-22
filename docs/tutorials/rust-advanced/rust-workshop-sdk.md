@@ -218,7 +218,7 @@ Let's create a "Hello, world!" program and build it with tools from the {pkg}`ru
     workshop exec -- cargo init --name hello-workshop
     ```
 
-    The project directory is mounted as {file}`/project` inside the workshop, so files created on either side (the host or the workshop) appear in both. This means your host machine does not need Rust at all: scaffolding, building, and running all happen through the workshop, using the toolchain installed by the SDK.
+    The project directory is mounted as {file}`/project` inside the workshop, so files created on either side (the host or the workshop) appear in both.
 
     Cargo generates a package with a {file}`Cargo.toml` manifest and a {file}`src/main.rs` file that already contains a "Hello, world!" program:
 
@@ -246,7 +246,7 @@ Let's create a "Hello, world!" program and build it with tools from the {pkg}`ru
     Hello, world!
     ```
 
-    This should print "Hello, world!" to the workshop console. Note that this happened inside the workshop: the program was compiled and executed by the toolchain installed in the container, not on your host machine.
+    You should see "Hello, world!" printed in your terminal — and the best part is where it came from. Everything happened inside the workshop container: the toolchain installed by the SDK did the scaffolding, compiling, and running, and your host machine does not need Rust at all.
 
 
 ## Managing your Rust toolchain
