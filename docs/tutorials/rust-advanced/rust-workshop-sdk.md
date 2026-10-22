@@ -636,4 +636,4 @@ This SDK doesn't define any slots out of the box. As shown in the {ref}`advanced
 
 ## For More Information
 
-The source code for the Rust SDK for Workshop is publicly available on [GitHub](https://github.com/canonical/rust-sdk)
+The source code for the Rust SDK for Workshop is publicly available on [GitHub](https://github.com/canonical/rust-sdk).
