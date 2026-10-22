@@ -345,7 +345,7 @@ workshop exec -- rustc --version
 rustc 1.101.0-nightly (1a2c4797e 2026-10-21)
 ```
 
-The workshop still reports the nightly toolchain. To switch back:
+The workshop reports the nightly toolchain even after the restart, demonstrating that your selection persisted. To switch back to the `stable` toolchain:
 
 ```{terminal}
 :copy:
