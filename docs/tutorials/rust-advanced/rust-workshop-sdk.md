@@ -65,6 +65,9 @@ Before initializing a workshop, search the SDK Store to confirm that the SDK exi
     :host: ubuntu
 
     sdk find rust
+
+    NAME  VERSION  PUBLISHER    SUMMARY
+    rust  1.99.1   Canonical**  The Rust toolchain installer
     ```
 
 * Inspect SDK release information:
@@ -75,9 +78,32 @@ Before initializing a workshop, search the SDK Store to confirm that the SDK exi
     :host: ubuntu
 
     sdk info rust
+
+    name:       rust
+    publisher:  Canonical✓
+    license:    Apache-2.0 OR MIT
+    website:    https://github.com/canonical/rust-sdk
+
+    This SDK provides rustup and the Rust toolchain for Rust development.
+    Toolchains and Cargo configuration are persisted on the host across
+    workshop updates. Automatically detects project toolchain requirements
+    via rust-toolchain.toml.
+
+    CHANNELS
+      CHANNEL           VERSION  BUILD       BASE          REV    SIZE
+      latest/stable     1.99.1   2026-10-16  ubuntu@26.04   50  4.75MB
+                                             ubuntu@24.04   49  4.75MB
+                                             ubuntu@22.04   51  4.78MB
+      latest/candidate  ↑
+      latest/beta       ↑
+      latest/edge       ↑
     ```
 
 The `rust` SDK is published by Canonical and tracks a single channel, `latest/stable`, with builds for the Ubuntu 22.04, 24.04, and 26.04 bases. The `CHANNELS` table in the `sdk info rust` output lists the supported bases for your machine.
+
+:::{note}
+The output you see depends on the version of the SDK available at the time you run these commands. When a newer release is published, the version number, build date, and revision shown above will differ. The `CHANNELS` table may also list a different set of Ubuntu bases, since it reflects the builds available for your machine.
+:::
 
 
 ## Creating a Rust workshop
@@ -138,6 +164,8 @@ Let's create a "Hello, world!" program and build it with tools from the {pkg}`ru
       :host: ubuntu
 
       workshop launch
+
+      "rust-example" launched
       ```
 
       This prepares the workshop by automatically pulling and installing the defined SDKs, after which it starts the workshop container.
@@ -150,6 +178,24 @@ Let's create a "Hello, world!" program and build it with tools from the {pkg}`ru
       :host: ubuntu
 
       workshop info
+
+      name:      rust-example
+      base:      ubuntu@24.04
+      project:   ~/hello-workshop
+      hostname:  rust-example.hello-workshop.wp
+      status:    ready
+      runtime:   lxd-container
+      notes:     –
+      sdks:
+        system:
+          installed:  (2)
+        rust:
+          tracking:   latest/stable
+          installed:  1.99.1  2026-10-16  (49)
+          mounts:
+            cargo-registry:
+              host-source:      …/e5faec78/rust-example/mount/rust/cargo-registry
+              workshop-target:  /home/workshop/.cargo/registry
       ```
 
        The `rust` SDK installs rustup and the default `stable` toolchain inside the workshop, alongside a mount that caches downloaded dependencies on the host between workshop updates.
@@ -170,7 +216,7 @@ Let's create a "Hello, world!" program and build it with tools from the {pkg}`ru
 
     The project directory is mounted as {file}`/project` inside the workshop, so files created on either side (the host or the workshop) appear in both. This means your host machine does not need Rust at all: scaffolding, building, and running all happen through the workshop, using the toolchain installed by the SDK.
 
-    Cargo scaffolds a package with a {file}`Cargo.toml` manifest and a {file}`src/main.rs` file that already contains a "Hello, world!" program:
+    Cargo generates a package with a {file}`Cargo.toml` manifest and a {file}`src/main.rs` file that already contains a "Hello, world!" program:
 
     ```{code-block} rust
     :caption: `src/main.rs`
@@ -188,6 +234,11 @@ Let's create a "Hello, world!" program and build it with tools from the {pkg}`ru
     :host: ubuntu
 
     workshop exec -- cargo run
+
+    Compiling hello-workshop v0.1.0 (/project)
+     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.48s
+      Running `target/debug/hello-workshop`
+    Hello, world!
     ```
 
     This should print "Hello, world!" to the workshop console. Note that this happened inside the workshop: the program was compiled and executed by the toolchain installed in the container, not on your host machine.
@@ -223,6 +274,8 @@ Confirm that the workshop uses the pinned toolchain:
 :host: ubuntu
 
 workshop exec -- rustc --version
+
+rustc 1.85.0 (4d91de4e4 2025-02-17)
 ```
 
 :::{note}
@@ -243,6 +296,11 @@ If you would like to pick a toolchain version without a project file, use rustup
 :host: ubuntu
 
 workshop exec -- rustup default nightly
+
+info: using existing install for nightly-x86_64-unknown-linux-gnu
+info: default toolchain set to nightly-x86_64-unknown-linux-gnu
+
+  nightly-x86_64-unknown-linux-gnu unchanged - rustc 1.101.0-nightly (1a2c4797e 2026-10-21)
 ```
 
 Your selection is stored inside the workshop container, so it survives stopping and starting the workshop:
@@ -253,6 +311,8 @@ Your selection is stored inside the workshop container, so it survives stopping 
 :host: ubuntu
 
 workshop stop
+
+"rust-example" stopped
 ```
 
 ```{terminal}
@@ -261,6 +321,8 @@ workshop stop
 :host: ubuntu
 
 workshop start
+
+"rust-example" started
 ```
 
 ```{terminal}
@@ -269,6 +331,8 @@ workshop start
 :host: ubuntu
 
 workshop exec -- rustc --version
+
+rustc 1.101.0-nightly (1a2c4797e 2026-10-21)
 ```
 
 The workshop still reports the nightly toolchain. To switch back:
@@ -279,6 +343,11 @@ The workshop still reports the nightly toolchain. To switch back:
 :host: ubuntu
 
 workshop exec -- rustup default stable
+
+info: using existing install for stable-x86_64-unknown-linux-gnu
+info: default toolchain set to stable-x86_64-unknown-linux-gnu
+
+  stable-x86_64-unknown-linux-gnu unchanged - rustc 1.99.1 (58cf8f9c3 2026-10-13)
 ```
 
 :::{note}
@@ -446,6 +515,8 @@ So far, everything has run inside the workshop. In this section, you will build 
       :host: ubuntu
 
       workshop refresh
+
+      "rust-example" refreshed
       ```
 
    1. View information about the workshop:
@@ -456,9 +527,43 @@ So far, everything has run inside the workshop. In this section, you will build 
       :host: ubuntu
 
       workshop info
+
+      name:      rust-example
+      base:      ubuntu@24.04
+      project:   ~/hello-workshop
+      hostname:  rust-example.hello-workshop.wp
+      status:    ready
+      runtime:   lxd-container
+      notes:     –
+      sdks:
+        system:
+          installed:  (2)
+          tunnels:
+            webapp:
+              from:  127.0.0.1:8080/tcp
+              to:    127.0.0.1:8080/tcp
+        rust:
+          tracking:   latest/stable
+          installed:  1.99.1  2026-10-16  (49)
+          mounts:
+            cargo-registry:
+              host-source:      …/e5faec78/rust-example/mount/rust/cargo-registry
+              workshop-target:  /home/workshop/.cargo/registry
       ```
 
-      The output now includes the `webapp` tunnel, forwarding `localhost:8080` on the host to `localhost:8080` inside the workshop. You can also inspect interface connections with the {command}`workshop connections` command.
+      The output now includes the `webapp` tunnel, forwarding `localhost:8080` on the host to `localhost:8080` inside the workshop. You can also inspect interface connections with the {command}`workshop connections` command:
+
+      ```{terminal}
+      :copy:
+      :user: dev
+      :host: ubuntu
+
+      workshop connections
+
+      INTERFACE  PLUG                              SLOT                       NOTES
+      mount      rust-example/rust:cargo-registry  rust-example/system:mount  -
+      tunnel     rust-example/system:webapp        rust-example/rust:webapp   -
+      ```
 
 1. Start the application using the new action:
 
@@ -480,9 +585,11 @@ So far, everything has run inside the workshop. In this section, you will build 
     :host: ubuntu
 
     curl http://localhost:8080/health
+
+    {"status":"ok"}
     ```
 
-    This prints `{"status":"ok"}`. When you are done, stop the server by pressing {kbd}`Ctrl+C`.
+    This confirms that the application is running correctly, and is accessible from your host. When you are done, stop the server by pressing {kbd}`Ctrl+C`.
 
 
 ## SDK reference
