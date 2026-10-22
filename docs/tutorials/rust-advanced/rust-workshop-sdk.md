@@ -132,6 +132,7 @@ Let's create a "Hello, world!" program and build it with tools from the {pkg}`ru
 
     ```{terminal}
     :copy:
+    :dir: ~/hello-workshop
     :user: dev
     :host: ubuntu
 
@@ -160,6 +161,7 @@ Let's create a "Hello, world!" program and build it with tools from the {pkg}`ru
 
       ```{terminal}
       :copy:
+      :dir: ~/hello-workshop
       :user: dev
       :host: ubuntu
 
@@ -174,6 +176,7 @@ Let's create a "Hello, world!" program and build it with tools from the {pkg}`ru
 
       ```{terminal}
       :copy:
+      :dir: ~/hello-workshop
       :user: dev
       :host: ubuntu
 
@@ -208,6 +211,7 @@ Let's create a "Hello, world!" program and build it with tools from the {pkg}`ru
 
     ```{terminal}
     :copy:
+    :dir: ~/hello-workshop
     :user: dev
     :host: ubuntu
 
@@ -230,6 +234,7 @@ Let's create a "Hello, world!" program and build it with tools from the {pkg}`ru
 
     ```{terminal}
     :copy:
+    :dir: ~/hello-workshop
     :user: dev
     :host: ubuntu
 
@@ -270,6 +275,7 @@ Confirm that the workshop uses the pinned toolchain:
 
 ```{terminal}
 :copy:
+:dir: ~/hello-workshop
 :user: dev
 :host: ubuntu
 
@@ -292,6 +298,7 @@ If you would like to pick a toolchain version without a project file, use rustup
 
 ```{terminal}
 :copy:
+:dir: ~/hello-workshop
 :user: dev
 :host: ubuntu
 
@@ -307,6 +314,7 @@ Your selection is stored inside the workshop container, so it survives stopping 
 
 ```{terminal}
 :copy:
+:dir: ~/hello-workshop
 :user: dev
 :host: ubuntu
 
@@ -317,6 +325,7 @@ workshop stop
 
 ```{terminal}
 :copy:
+:dir: ~/hello-workshop
 :user: dev
 :host: ubuntu
 
@@ -327,6 +336,7 @@ workshop start
 
 ```{terminal}
 :copy:
+:dir: ~/hello-workshop
 :user: dev
 :host: ubuntu
 
@@ -339,6 +349,7 @@ The workshop still reports the nightly toolchain. To switch back:
 
 ```{terminal}
 :copy:
+:dir: ~/hello-workshop
 :user: dev
 :host: ubuntu
 
@@ -383,6 +394,7 @@ Run the actions:
 
 ```{terminal}
 :copy:
+:dir: ~/hello-workshop
 :user: dev
 :host: ubuntu
 
@@ -391,6 +403,7 @@ workshop run build
 
 ```{terminal}
 :copy:
+:dir: ~/hello-workshop
 :user: dev
 :host: ubuntu
 
@@ -426,6 +439,7 @@ So far, everything has run inside the workshop. In this section, you will build 
 
     ```{terminal}
     :copy:
+    :dir: ~/hello-workshop
     :user: dev
     :host: ubuntu
 
@@ -434,6 +448,7 @@ So far, everything has run inside the workshop. In this section, you will build 
 
     ```{terminal}
     :copy:
+    :dir: ~/hello-workshop
     :user: dev
     :host: ubuntu
 
@@ -442,6 +457,7 @@ So far, everything has run inside the workshop. In this section, you will build 
 
     ```{terminal}
     :copy:
+    :dir: ~/hello-workshop
     :user: dev
     :host: ubuntu
 
@@ -511,6 +527,7 @@ So far, everything has run inside the workshop. In this section, you will build 
 
       ```{terminal}
       :copy:
+      :dir: ~/hello-workshop
       :user: dev
       :host: ubuntu
 
@@ -523,6 +540,7 @@ So far, everything has run inside the workshop. In this section, you will build 
 
       ```{terminal}
       :copy:
+      :dir: ~/hello-workshop
       :user: dev
       :host: ubuntu
 
@@ -555,6 +573,7 @@ So far, everything has run inside the workshop. In this section, you will build 
 
       ```{terminal}
       :copy:
+      :dir: ~/hello-workshop
       :user: dev
       :host: ubuntu
 
@@ -569,6 +588,7 @@ So far, everything has run inside the workshop. In this section, you will build 
 
     ```{terminal}
     :copy:
+    :dir: ~/hello-workshop
     :user: dev
     :host: ubuntu
 
@@ -581,6 +601,7 @@ So far, everything has run inside the workshop. In this section, you will build 
 
     ```{terminal}
     :copy:
+    :dir: ~/hello-workshop
     :user: dev
     :host: ubuntu
 
