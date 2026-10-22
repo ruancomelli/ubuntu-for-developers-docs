@@ -258,7 +258,7 @@ Rust projects often need to control exactly which Rust version they build with: 
 ### Pinning a toolchain for the project
 :::
 
-Rust's mechanism for signaling a project's toolchain requirement is to write the configuration into [a file named {file}`rust-toolchain.toml` in the project directory](https://rust-lang.github.io/rustup/overrides.html#the-toolchain-file).
+Rust's mechanism for signaling a project's toolchain requirement is to write the configuration into a {file}`rust-toolchain.toml` file in the project directory, called [the toolchain file](https://rust-lang.github.io/rustup/overrides.html#the-toolchain-file).
 
 For example, to pin your project to Rust 1.85.0, create a {file}`rust-toolchain.toml` file with the following content:
 
